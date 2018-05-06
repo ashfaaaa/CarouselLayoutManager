@@ -1,6 +1,7 @@
 package com.azoft.carousellayoutmanager;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.animation.DecelerateInterpolator;
 
 /**
  * Class for centering items after scroll event.<br />
@@ -24,7 +25,8 @@ public class CenterScrollListener extends RecyclerView.OnScrollListener {
             if (RecyclerView.SCROLL_STATE_IDLE == newState) {
                 final int scrollNeeded = lm.getOffsetCenterView();
                 if (CarouselLayoutManager.HORIZONTAL == lm.getOrientation()) {
-                    recyclerView.smoothScrollBy(scrollNeeded, 0);
+                    //recyclerView.smoothScrollBy(scrollNeeded, 0);
+                    recyclerView.smoothScrollBy(scrollNeeded, 0, new DecelerateInterpolator());
                 } else {
                     recyclerView.smoothScrollBy(0, scrollNeeded);
                 }
