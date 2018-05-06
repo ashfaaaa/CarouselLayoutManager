@@ -22,7 +22,7 @@ public class CarouselZoomPostLayoutListener implements CarouselLayoutManager.Pos
             translateY = Math.signum(itemPositionToCenterDiff) * translateYGeneral;
             translateX = 0;
         } else {
-            final float translateXGeneral = child.getMeasuredWidth() * (1 - scale) / 2f;
+            final float translateXGeneral = child.getMeasuredWidth() * (1 - scale) / 0.8f; // 2f;
             translateX = Math.signum(itemPositionToCenterDiff) * translateXGeneral;
             translateY = 0;
         }
